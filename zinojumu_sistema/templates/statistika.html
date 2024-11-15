@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block saturs %}
+<h2>Statistika</h2>
+<table>
+    <tr>
+        <th>Vārds</th>
+        <th>Uzvārds</th>
+        <th>Ziņojumu skaits</th>
+    </tr>
+    {% for stat in statistika %}
+    <tr>
+        <td>{{ stat[0] }}</td>
+        <td>{{ stat[1] }}</td>
+        <td>{{ stat[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

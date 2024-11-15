@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block saturs %}
+<h2>Reģistrācija</h2>
+<form method="POST">
+    <p>
+        <label>Vārds:</label>
+        <input type="text" name="vards" required>
+    </p>
+    <p>
+        <label>Uzvārds:</label>
+        <input type="text" name="uzvards" required>
+    </p>
+    <p>
+        <label>Lietotājvārds:</label>
+        <input type="text" name="lietotajvards" required>
+    </p>
+    <button type="submit">Reģistrēties</button>
+</form>
+{% endblock %}

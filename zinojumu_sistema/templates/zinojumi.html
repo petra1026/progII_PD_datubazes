@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block saturs %}
+<h2>Ziņojumi</h2>
+<form method="POST">
+    <p>
+        <label>Lietotājs:</label>
+        <select name="lietotajs" required>
+            {% for lietotajs in lietotaji %}
+            <option value="{{ lietotajs[0] }}">{{ lietotajs[1] }} {{ lietotajs[2] }} ({{ lietotajs[3] }})</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <label>Ziņojums:</label>
+        <textarea name="zinojums" rows="4" required></textarea>
+    </p>
+    <button type="submit">Pievienot ziņojumu</button>
+</form>
+
+<h3>Visi ziņojumi</h3>
+<table>
+    <tr>
+        <th>Vārds</th>
+        <th>Uzvārds</th>
+        <th>Ziņojums</th>
+    </tr>
+    {% for zinojums in zinojumi %}
+    <tr>
+        <td>{{ zinojums[0] }}</td>
+        <td>{{ zinojums[1] }}</td>
+        <td>{{ zinojums[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
