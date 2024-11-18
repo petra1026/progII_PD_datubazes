@@ -170,5 +170,4 @@ def pievienot_komentaru(teksts, autors_id, zinojums_id):
     savienojums.commit()
     savienojums.close()
 
-# Izveido tabulas, kad fails tiek importēts
 izveidot_tabulas()
