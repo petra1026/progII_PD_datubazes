@@ -129,7 +129,11 @@ def iegut_lietotajus():
     savienojums = izveidot_savienojumu()
     cur = savienojums.cursor()
     
-    cur.execute('SELECT * FROM lietotaji')
+    cur.execute('''
+        SELECT id, vards, uzvards, lietotajvards 
+        FROM lietotaji 
+        ORDER BY vards ASC, uzvards ASC
+    ''')
     rezultats = cur.fetchall()
     
     savienojums.close()
