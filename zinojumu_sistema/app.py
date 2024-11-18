@@ -32,12 +32,12 @@ def registracija():
         vards = request.form['vards']
         uzvards = request.form['uzvards']
         lietotajvards = request.form['lietotajvards']
-        
+                
         savienojums = sqlite3.connect('zinojumi.db')
         c = savienojums.cursor()
         try:
             c.execute("INSERT INTO lietotaji (vards, uzvards, lietotajvards) VALUES (?, ?, ?)",
-                     (vards, uzvards, lietotajvards))
+                            (vards, uzvards, lietotajvards))
             savienojums.commit()
         except sqlite3.IntegrityError:
             return "Lietotājvārds jau eksistē!"
@@ -57,7 +57,7 @@ def zinojumi():
         c.execute("INSERT INTO zinojumi (lietotaja_id, zinojums) VALUES (?, ?)",
                  (lietotaja_id, zinojums))
         savienojums.commit()
-    
+
     lietotaji = c.execute("SELECT id, vards, uzvards, lietotajvards FROM lietotaji").fetchall()
     zinojumi = c.execute("""
         SELECT lietotaji.vards, lietotaji.uzvards, zinojumi.zinojums 
